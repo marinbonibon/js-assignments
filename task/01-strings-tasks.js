@@ -293,7 +293,13 @@ function getCardId (value) {
     'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
     'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
 
-  return deck.includes(value) ? deck.indexOf(value) : null;
+
+  for(let i = 0; i < deck.length; i++) {
+    if(value === deck[i]) {
+      return deck.indexOf(value);
+    }
+  }
+  return -1;
 }
 
 module.exports = {
