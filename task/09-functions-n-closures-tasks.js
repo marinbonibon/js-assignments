@@ -26,7 +26,12 @@
  *
  */
 function getComposition(f,g) {
-    throw new Error('Not implemented');
+    if(arguments.length === 0) {
+        return (a) => a;
+    } else {
+        const composeFunc = (...args) => args.reduce( (f, g) => (a) => f(g(a)));
+        return composeFunc(...arguments);
+    }
 }
 
 
