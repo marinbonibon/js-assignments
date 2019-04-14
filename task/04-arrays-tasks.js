@@ -533,11 +533,7 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-   const object = {};
-   arr.map((item) => {
-      object[item] = item;
-   });
-   return Object.values(object);
+   return [...new Set(arr)];
 }
 
 /**
